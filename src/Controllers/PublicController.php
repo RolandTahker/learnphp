@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class PublicController {
     public function home(){
-        include __DIR__ . '/../../views/home.php';
+        view('home');
     }
     public function about(){
-        echo 'about';
+        view('about');
     }
 }
