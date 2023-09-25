@@ -1,6 +1,6 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
 <div class="container">
-    <form action="/register" method="POST">
+    <form action="/login" method="POST">
         <div class="field">
             <label class="label" for="email">Email</label>
             <div class="control">
@@ -21,7 +21,7 @@
         </div>
         <div class="field">
          <div class="control">
-            <input class="button is-primary" type="submit" value="register">
+            <input class="button is-primary" type="submit" value="login">
          </div>
         </div>
     </form>

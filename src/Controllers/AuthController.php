@@ -9,7 +9,7 @@ class AuthController {
         if($_POST['password'] == $_POST['password_confirm']){
             $user = new User();
             $user->email = $_POST['email'];
-            $user->password = $_POST['password'];
+            $user->password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $user->save();
             header('Location: /login');
         } else {
@@ -23,7 +23,6 @@ class AuthController {
     }
     
     public function login(){
-        
     }
 
     public function loginForm(){
