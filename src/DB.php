@@ -58,13 +58,19 @@ class DB {
         $setText = rtrim($setText, ",");
         $sql = "UPDATE $table SET $setText WHERE id=$id";
 
-        var_dump($sql);
-        die();
+        
         // Prepare statement
         $stmt = $this->conn->prepare($sql);
       
         // execute the query
         $stmt->execute();
 
+    }
+    public function delete($table, $id,){
+          // sql to delete a record
+        $sql = "DELETE FROM $table WHERE id=$id";
+
+  // use exec() because no results are returned
+        $this->conn->exec($sql);
     }
 }
