@@ -1,13 +1,13 @@
-    <?php include __DIR__ . '/partials/header.php'; ?>
+<?php include __DIR__ . '/partials/header.php'; ?>
 <div class="container">
     <div class="columns">
         <?php foreach($articles as $article): ?>
-        <div class="column is-3">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        <?=$article->title?>
-                    </p>
+            <div class="column is-3">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            <?=$article->title?>
+                        </p>
                     </header>
                     <div class="card-content">
                         <div class="content">
@@ -19,6 +19,4 @@
         <?php endforeach; ?>
     </div>
 </div>
-<?php include __DIR__ . '/partials/footer.php'; ?>
-
-
+<?php include __DIR__ .  '/partials/footer.php'; ?>

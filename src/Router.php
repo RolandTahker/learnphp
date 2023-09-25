@@ -23,17 +23,16 @@ class Router {
     public static function addRoute($method, $path, $action){
         self::$routes[] = [
             'method' => $method,
-            'path' => $path, 
+            'path' => $path,
             'action' => $action
-        ];
+        ]; 
     }
 
-public static function get($path, $action) {
-    self::addRoute('GET', $path, $action);
-}
+    public static function get($path, $action) {
+        self::addRoute('GET', $path, $action);
+    }
 
-public static function post($path, $action) {
-    self::addRoute('POST', $path, $action);
-}
-
+    public static function post($path, $action) {
+        self::addRoute('POST', $path, $action);
+    }
 }
