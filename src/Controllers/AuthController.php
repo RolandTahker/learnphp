@@ -23,6 +23,13 @@ class AuthController {
     }
     
     public function login(){
+        $user = User::where('email', $_POST['email']);
+        $user = $user[0] ?? null;
+        if($user && password_verify($_POST['password'], $user->password)){
+            echo 'Logged in!';
+        } else {
+            echo 'WRONG DATA';
+        }
     }
 
     public function loginForm(){

@@ -14,9 +14,8 @@ class PublicController {
         view('about');
     }
     public function test(){
-        var_dump($_POST);
-        var_dump($_SERVER);
-        view('form');
+        setcookie('mycookie', 'tasty');
+        var_dump($_COOKIE);
     }
     public function testAnswer(){
         var_dump($_POST);
