@@ -1,13 +1,8 @@
 <?php
+session_start();
 
-spl_autoload_register(function ($className){
-    $className = substr($className, 4);
-    // var_dump($className);
-    require_once __DIR__ . "/../src/$className.php";
-});
+require __DIR__ . '/../vendor/autoload.php';
 
-
-//
 use App\Router;
 
 require __DIR__ . '/../routes.php';
@@ -27,20 +22,3 @@ if($match){
 } else {
     echo 404;
 }
-
-
-
-
-// var_dump($_SERVER);
-// switch ($_SERVER['REQUEST_URI']) {
-//    case '/':
-//        echo 'Home page';
-//        break;
-//    case '/about':
-//        echo 'About';
-//        break;
-//    default:
-//        echo '404';
-//        break;
-
-// }

@@ -2,9 +2,7 @@
 
 namespace App\Controllers;
 
-
 use App\Models\Article;
-
 
 class ArticlesController {
     public function index(){
@@ -17,7 +15,6 @@ class ArticlesController {
     }
 
     public function store(){
-
         $article = new Article();
         $article->title = $_POST['title'];
         $article->body = $_POST['body'];
@@ -28,6 +25,7 @@ class ArticlesController {
     public function show(){
         $id = $_GET['id'];
         $article = Article::find($id);
+        //view('articles/view', ['article' => $article]);
 
         view('articles/view', compact('article'));
     }
@@ -37,6 +35,7 @@ class ArticlesController {
         $article = Article::find($id);
         view('articles/edit', compact('article'));
     }
+
     public function update(){
         $id = $_GET['id'];
         $article = Article::find($id);
@@ -46,8 +45,9 @@ class ArticlesController {
         header('Location: /admin/articles');
     }
     public function delete(){
-         $id = $_GET['id'];
-         $article = Article::find($id);
-         $article->delete();
+        $id = $_GET['id'];
+        $article = Article::find($id);
+        $article->delete();
+        header('Location: /admin/articles');
     }
 }

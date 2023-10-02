@@ -1,0 +1,16 @@
+{
+    "name": "roland.tahker/learnphp",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RolandTahker",
+            "email": "rolandtahker@gmail.com"
+        }
+    ],
+    "require": {}
+}

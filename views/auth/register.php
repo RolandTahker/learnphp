@@ -10,19 +10,19 @@
         <div class="field">
             <label class="label" for="password">Password</label>
             <div class="control">
-            <input class="input" type="password" placeholder="password" name="password" id="password">
+                <input class="input" type="password" name="password" id="password">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="password_confirm">Password confirm</label>
+            <label class="label" for="password_confirm">Password Confirm</label>
             <div class="control">
-            <input class="input" type="password" placeholder="Password_confirm" name="password_confirm" id="password_confirm">
+                <input class="input" type="password" name="password_confirm" id="password_confirm">
             </div>
         </div>
         <div class="field">
-         <div class="control">
-            <input class="button is-primary" type="submit" value="register">
-         </div>
+            <div class="control">
+                <input class="button is-primary" type="submit" value="Register">
+            </div>
         </div>
     </form>
 </div>

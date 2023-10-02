@@ -13,27 +13,36 @@ class AuthController {
             $user->save();
             header('Location: /login');
         } else {
+            $_SESSION['error'] = 'Passwords dont match';
             header('Location: /register');
         }
-
     }
 
     public function registerForm(){
-        view('auth/register');     
+        view('auth/register');
+        unset($_SESSION['error']);
     }
     
     public function login(){
+        
         $user = User::where('email', $_POST['email']);
         $user = $user[0] ?? null;
         if($user && password_verify($_POST['password'], $user->password)){
-            echo 'Logged in!';
+            $_SESSION['user'] = $user->id;
+            header('Location: /');
         } else {
-            echo 'WRONG DATA';
+            $_SESSION['error'] = 'Wrong email or pass';
+            header('Location: /login');
         }
     }
 
     public function loginForm(){
         view('auth/login');
+        unset($_SESSION['error']);
     }
 
+    public function logout(){
+        unset($_SESSION['user']);
+        header('Location: /');
+    }
 }
