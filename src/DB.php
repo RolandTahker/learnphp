@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Article;
+use App\Models\User;
 use \PDO;
 use \PDOException;
 
